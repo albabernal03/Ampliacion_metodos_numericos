@@ -22,17 +22,17 @@ def f(x, y):
     '''
     return y - x**2 + 1
 
-'''def f_exacta1(x):
+def f_exacta1(x):
     
-    return (x + 1)**2 - (1/2)*np.exp(x)'''
+    return (x + 1)**2 - (1/2)*np.exp(x)
 
-'''def f_exacta2(x):
+def f_exacta2(x):
    
-    return (x + 1)**2 - np.exp(x)'''
+    return (x + 1)**2 - np.exp(x)
 
-'''def f_exacta3(x):
+def f_exacta3(x):
    
-    return (x + 1)**2 - 2*np.exp(x)'''
+    return (x + 1)**2 - 2*np.exp(x)
 
 def error(v, v_aprox):
     '''
@@ -49,16 +49,16 @@ x_final = 1/2
 # Datos iniciales (me da n 3 datos iniciales donde x siempre es igual, pero y varía)
 x = 0
 y0 = 1/2
-#y1 = 0
-#y2 = -1
+y1 = 0
+y2 = -1
 # Número de subintervalos que nos permite calcular el valor de h (paso)
-n = 2000
+n = 20
 h = (x_final - x_inicial)/n
 
 # Aplicamos el método de Euler 3 veces (una para cada dato inicial) y obtenemos las soluciones numéricas
 u0, v0 = euler(f, x, y0, h, n)
-#u1, v1 = euler(f, x, y1, h, n)
-#u2, v2 = euler(f, x, y2, h, n)
+u1, v1 = euler(f, x, y1, h, n)
+u2, v2 = euler(f, x, y2, h, n)
 
 # Obtenemos las soluciones exactas
 x_real = np.linspace(x_inicial, x_final, n)
