@@ -1,3 +1,4 @@
+from cmath import sin
 import matplotlib.pyplot as plt
 import numpy as np
 import math 
@@ -30,13 +31,14 @@ def f1(t, x, y):
     '''
     Aquí se define la primera EDO de orden 1 del sistema
     '''
+    #return y
     return y
 
 def f2(t, x, y):
     '''
     Aquí se define la segunda EDO de orden 1 del sistema
     '''
-    return -x + x**2
+    return (-c*y)-(k*sin(x))
 
 def generar_datos_iniciales(n):
     '''
@@ -75,7 +77,7 @@ k = 1
 c = 0
 # Rango de t (tiempo)
 t_inicial = 0 # Normalmente siempre arranca en 0
-t_final = 2
+t_final = 15
 # Datos iniciales
 t = 0
 x = 0.5 # Primera EDO1 del sistema

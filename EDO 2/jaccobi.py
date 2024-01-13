@@ -45,7 +45,7 @@ x_inicial = -1
 x_final = 1
 # Datos iniciales
 x = -0.999
-u=((-1)**n )*  #recodar que la u es la y
+u=((-1)**n )  #recodar que la u es la y
 #sumatorio= 0
 #for m in range(0, math.floor(c/2)):
     #sumatorio += (-1)**m * (math.factorial(c-m-1))/(np.math.factorial(m)*np.math.factorial(c-2*m-1))*(-2)**(c-2*m-1)
