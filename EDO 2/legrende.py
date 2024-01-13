@@ -20,8 +20,8 @@ def f(x, u, v,m): #la m sale de la ecuacion de Bessel
 x_inicial = 0
 x_final = 0.95
 x = 0
-u0 = 0 #recodar que la u es la y
-v0 = 1 #es y'
+u0 = 0 #recodar que la u es la y!!!!
+v0 = 1 #es y' !!!!
 n = 100
 h = (x_final - x_inicial) / n
 m=0 #para la ecuacion de Legrende
