@@ -4,7 +4,7 @@ import numpy as np
 import math 
 
 
-def runge_kutta_4_sistemas(f1, f2, t, x, y, h, n):
+def runge_kutta_4_plano(f1, f2, t, x, y, h, n):
     '''
     Función que implementa el método de Runge-Kutta de orden 4 para resolver un sistema de EDOs de primer orden
     '''
@@ -58,7 +58,7 @@ def plot_plano_fases(f1, f2, t, datos, h, n):
     '''
     for x0, y0 in datos:
         # Aplicamos el método de Runge-Kutta de orden 4 para resolver el sistema de EDOs de primer orden
-        u, v = runge_kutta_4_sistemas(f1, f2, t, x0, y0, h, n)
+        u, v = runge_kutta_4_plano(f1, f2, t, x0, y0, h, n)
         # Graficamos
         plt.plot(u, v)
 
