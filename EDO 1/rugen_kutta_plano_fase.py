@@ -32,13 +32,13 @@ def f1(t, x, y):
     Aquí se define la primera EDO de orden 1 del sistema
     '''
     #return y
-    return y
+    return - y + x*(1 - x**2 - y**2)
 
 def f2(t, x, y):
     '''
     Aquí se define la segunda EDO de orden 1 del sistema
     '''
-    return (-c*y)-(k*sin(x))
+    return  x + y*(1 - x**2 - y**2)
 
 def generar_datos_iniciales(n):
     '''
