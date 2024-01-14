@@ -19,7 +19,8 @@ def f(x, u, v,m): #la m sale de la ecuacion de Bessel
     #return 1-v-u
 
     #Besel:
-    return ((1/x)*v)-((1-((m**2)/(x**2)))*u)
+    #return ((1/x)*v)-((1-((m**2)/(x**2)))*u)
+    return ((m**2-x**2)*u - x*v)/(x**2)
 
 # Datos
 m=0
