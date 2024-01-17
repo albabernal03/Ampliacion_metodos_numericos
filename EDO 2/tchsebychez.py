@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import math
 
 def runge_kutta_4_edo_2(f, x, u, v, h, n):
@@ -30,7 +29,7 @@ def f(x, u, v): #la c sale de lo de Tchebyshev que corresponde con la n
     '''
     Aquí se define la EDO
     '''
-    return (3*x*v - (n*(n+2))*u)/(1-x**2)
+    return (3*x*v - n*(n+2)*u)/(1-x**2)
 
 
 
@@ -38,17 +37,17 @@ def f(x, u, v): #la c sale de lo de Tchebyshev que corresponde con la n
 
 
 
-c = int(input("Introduce el valor de c: ")) #La c corresponde con Tchebyshev
+c = int(input("Introduce el valor de c: ")) #La c corresponde con Tchebyshev que es mi n
 # Rango de x
 x_inicial = -1
 x_final = 1
 # Datos iniciales
 x = -0.999
-u = (-1)**c  #recodar que la u es la y
+u = ((-1)**c)*(c+1) #recodar que la u es la y
 sumatorio = 0
-for m in range(0, math.floor(c/2)):
-    sumatorio += (-1)**m * (math.factorial(c-m-1))/(np.math.factorial(m)*np.math.factorial(c-2*m-1))*(-2)**(c-2*m-1)
-v = sumatorio
+for m in range(1, math.floor(c/2)):
+    sumatorio += ((-1)**m)*math.comb(c-m,m)*(c-2*m)*(-2)**(c-2*m-1)
+v = 2*sumatorio
 # Número de subintervalos que nos permite calcular el valor de h (paso)
 n = 100
 h = (x_final - x_inicial)/n
@@ -62,3 +61,4 @@ plt.xlabel('x')
 plt.ylabel('u(x)')
 plt.grid(True)
 plt.savefig('para_c_2')
+
