@@ -25,7 +25,7 @@ def f(x,y):
 def f_exacta(x):
     
     #return np.sqrt(2 * np.log(1 + np.exp(x)) + 0.746144)
-    return exp((x**2-y**2)/(2*y**2))
+    return (2*x-((3*x**2)/2)+1)/(x-1)
 
 
 
@@ -37,11 +37,11 @@ def error(v, v_aprox):
     return abs(v- v_aprox)
 
 #DATOS
-x_inicial=-1
-x_final=1
+x_inicial=2
+x_final=6
 
-x = -1
-y = 1
+x = 2
+y = -1
 n = 100
 h = (x_final-x_inicial)/n
 u,v = euler(f,x,y,h,n)
@@ -49,10 +49,10 @@ u,v = euler(f,x,y,h,n)
 print('w_100', v[-1])
 
 #solucion real en y(100)
-print('y(1)=', f_exacta(1)) #es la ultima x del rango
+print('y(6)=', f_exacta(6)) #es la ultima x del rango
 
 #Error
-v_exacta = f_exacta(1) #no olvid<r sustituir la X
+v_exacta = f_exacta(6) #no olvid<r sustituir la X
 print('Error: ', error(v_exacta,v[-1]))
 
 #Grafica
