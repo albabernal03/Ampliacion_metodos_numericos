@@ -30,7 +30,7 @@ def f(x, u, v): #la c sale de lo de Tchebyshev que corresponde con la n
     '''
     Aquí se define la EDO
     '''
-    return ((-c**2)*u + x*v)/(1-x**2)
+    return (3*x*v - (n*(n+2))*u)/(1-x**2)
 
 
 
@@ -61,3 +61,4 @@ plt.plot(r, t)
 plt.xlabel('x')
 plt.ylabel('u(x)')
 plt.grid(True)
+plt.savefig('para_c_2')
